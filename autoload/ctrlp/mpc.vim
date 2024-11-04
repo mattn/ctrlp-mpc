@@ -29,7 +29,7 @@ function! ctrlp#mpc#accept(mode, str) abort
   let l:id = str2nr(a:str, 10)
   call ctrlp#exit()
   let l:results = split(system(printf("mpc play %s", l:id)), '\n')
-  let l:message = '[mpc] NOW PLAYING: ' . ' ♫' . trim(results[0])
+  let l:message = '[mpc] NOW PLAYING: ' . '♫ ' . trim(results[0])
   highlight default mpcEchoMsg cterm=bold gui=bold guifg=#5fd7ff ctermfg=lightblue
   redraw
   echohl mpcEchoMsg
